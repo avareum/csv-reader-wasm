@@ -5,11 +5,11 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 pub struct TokenTransferJob {
-    name: String,     // "John Doe"
-    chain_id: String, // "56"
-    to: H160, // "0x710587D0b618E1fBBD5016762F126009B52deCF5", "0xD7f07B4686616712bFDD84787cc04a5d8F282e8A"
-    symbol: String, // "USDT"
-    amount: f64, // 1.234
+    pub name: String,     // "John Doe"
+    pub chain_id: String, // "56"
+    pub to: H160, // "0x710587D0b618E1fBBD5016762F126009B52deCF5", "0xD7f07B4686616712bFDD84787cc04a5d8F282e8A"
+    pub symbol: String, // "USDT"
+    pub amount: f64, // 1.234
 }
 
 pub fn csv_from_str(s: &str) -> anyhow::Result<Vec<TokenTransferJob>> {

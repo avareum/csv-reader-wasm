@@ -6,10 +6,9 @@ use utils::set_panic_hook;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-pub fn get_token_transfer_from_csv_string() -> Result<JsValue, JsError> {
+pub fn get_token_transfer_from_csv_string(csv_data: &str) -> Result<JsValue, JsError> {
     set_panic_hook();
 
-    let csv_data = "name,chain_id,to,symbol,amount\nJohn Doe,56,0x710587D0b618E1fBBD5016762F126009B52deCF5,USDT,1.234";
     let data = csv_from_str(csv_data);
 
     let data = match data {
